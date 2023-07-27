@@ -9,6 +9,8 @@ import SwiftUI
 
 @main
 struct AutoSwitcherApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+
     @StateObject private var storageManager = StorageManager()
     
     var body: some Scene {

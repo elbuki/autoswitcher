@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D00990D22A6B371900E5CC36 /* Outlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00990D12A6B371900E5CC36 /* Outlet.swift */; };
 		D00990D82A6B43B500E5CC36 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00990D72A6B43B500E5CC36 /* StorageManager.swift */; };
+		D0E0C0A72A71EE02001378C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E0C0A62A71EE02001378C8 /* AppDelegate.swift */; };
 		D0FF43362A577E6200E5BE14 /* AutoSwitcherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FF43352A577E6200E5BE14 /* AutoSwitcherApp.swift */; };
 		D0FF43382A577E6200E5BE14 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FF43372A577E6200E5BE14 /* ContentView.swift */; };
 		D0FF433A2A577E6300E5BE14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0FF43392A577E6300E5BE14 /* Assets.xcassets */; };
@@ -19,6 +20,8 @@
 /* Begin PBXFileReference section */
 		D00990D12A6B371900E5CC36 /* Outlet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Outlet.swift; sourceTree = "<group>"; };
 		D00990D72A6B43B500E5CC36 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		D0E0C0A62A71EE02001378C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D0E0C0A82A71EE70001378C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D0FF43322A577E6200E5BE14 /* AutoSwitcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoSwitcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0FF43352A577E6200E5BE14 /* AutoSwitcherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoSwitcherApp.swift; sourceTree = "<group>"; };
 		D0FF43372A577E6200E5BE14 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -58,7 +61,9 @@
 		D0FF43342A577E6200E5BE14 /* AutoSwitcher */ = {
 			isa = PBXGroup;
 			children = (
+				D0E0C0A82A71EE70001378C8 /* Info.plist */,
 				D0FF43432A577EAE00E5BE14 /* AutoSwitcher.entitlements */,
+				D0E0C0A62A71EE02001378C8 /* AppDelegate.swift */,
 				D0FF43352A577E6200E5BE14 /* AutoSwitcherApp.swift */,
 				D0FF43372A577E6200E5BE14 /* ContentView.swift */,
 				D0FF43392A577E6300E5BE14 /* Assets.xcassets */,
@@ -148,6 +153,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0E0C0A72A71EE02001378C8 /* AppDelegate.swift in Sources */,
 				D00990D22A6B371900E5CC36 /* Outlet.swift in Sources */,
 				D0FF43382A577E6200E5BE14 /* ContentView.swift in Sources */,
 				D00990D82A6B43B500E5CC36 /* StorageManager.swift in Sources */,
@@ -285,6 +291,7 @@
 				DEVELOPMENT_TEAM = BLQ2AFW6YZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AutoSwitcher/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = AutoSwitcher;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_NSHomeKitUsageDescription = "Configuring smart home accessories";
@@ -321,6 +328,7 @@
 				DEVELOPMENT_TEAM = BLQ2AFW6YZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AutoSwitcher/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = AutoSwitcher;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_NSHomeKitUsageDescription = "Configuring smart home accessories";
