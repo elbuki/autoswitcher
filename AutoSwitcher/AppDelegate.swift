@@ -9,6 +9,8 @@ import SwiftUI
 import UserNotifications
 
 class AppDelegate: NSObject, UIApplicationDelegate {
+
+    var model = HomeStore()
     
     func application(
         _ application: UIApplication,
@@ -47,12 +49,6 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         }
         
         print("hexed token: \(reduced)")
-        
-        // TODO: Set up this token in the app and begin testing
-        // F5A2BBB7F5841D7FA506BAFA40BDBAE2CD2BC40B3A4D1F99CD977B128F3C3E22
-        
-        // TODO: Send the token to a server somehow
-        // https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server
     }
     
     func application(
@@ -71,9 +67,42 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void
     ) {
         
-        print("received notification")
+        let desiredState: Bool
         
-        completionHandler(.newData)
+        guard let action = userInfo["action"] as? String else {
+            print("Could not parse the received action")
+            completionHandler(.noData)
+            return
+        }
+        
+        if action == "charge" {
+            desiredState = true
+        } else if action == "discharge" {
+            desiredState = false
+        } else {
+            print("Received unknown action: \(action)")
+            completionHandler(.noData)
+            return
+        }
+        
+        Task {
+            do {
+                let storageManager = StorageManager()
+                try await storageManager.load()
+                
+                if let outlet = storageManager.outlet {
+                    try await model.setPowerState(
+                        for: outlet.characteristicIdentifier,
+                        to: desiredState
+                    )
+                }
+                
+                completionHandler(.newData)
+            } catch {
+                print(error.localizedDescription)
+                completionHandler(.failed)
+            }
+        }
         
     }
 

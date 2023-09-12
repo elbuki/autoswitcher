@@ -11,13 +11,18 @@ import SwiftUI
 struct AutoSwitcherApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
+    @ObservedObject private var model = HomeStore()
     @StateObject private var storageManager = StorageManager()
+    
+    init() {
+        self.model = _appDelegate.wrappedValue.model
+    }
     
     var body: some Scene {
         WindowGroup {
             ContentView(
                 pickedOutlet: $storageManager.outlet,
-                model: .init(),
+                model: model,
                 saveAction: {
                     Task {
                         do {
